@@ -1,0 +1,35 @@
+{
+  "name": "nodemailer-salesforce-transport",
+  "version": "0.1.0",
+  "description": "Salesforce transport for Nodemailer",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Rebelmail/nodemailer-salesforce-transport.git"
+  },
+  "keywords": [
+    "nodemailer",
+    "salesforce",
+    "exacttarget",
+    "fuel"
+  ],
+  "author": "Rebelmail",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rebelmail/nodemailer-salesforce-transport/issues"
+  },
+  "homepage": "https://github.com/Rebelmail/nodemailer-salesforce-transport",
+  "dependencies": {
+    "email-addresses": "^2.0.1",
+    "fuel-rest": "^1.0.0",
+    "neo-async": "^1.6.0"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "mocha": "^2.2.5",
+    "sinon": "^1.16.1"
+  }
+}
