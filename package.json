@@ -1,6 +1,6 @@
 {
   "name": "nodemailer-salesforce-transport",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Salesforce transport for Nodemailer",
   "main": "index.js",
   "scripts": {
