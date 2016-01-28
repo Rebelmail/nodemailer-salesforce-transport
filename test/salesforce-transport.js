@@ -36,22 +36,39 @@ describe('SalesforceTransport', function() {
       }
     };
 
-    var postStub = sinon.stub(client, 'post', function(options, callback) {
-      callback(null, { body: { responses: [{ recipientSendId: 'fake-id' }] } });
-    });
-
-    after(function() {
-      postStub.restore();
-    });
-
     afterEach(function() {
-      postStub.reset();
+      client.post.restore();
     });
 
-    it('#send', function(done) {
+    it('should return error when response hasErrors', function(done) {
+      var stub = sinon.stub(client, 'post', function(options, callback) {
+        callback(null, {
+          body: {
+            responses: [{
+              hasErrors: true,
+              messageErrors: [{
+                messageErrorStatus: 'An error occured'
+              }]
+            }]
+          }
+        });
+      });
+
+      transport.send(payload, function(err, info) {
+        expect(err).to.exist;
+        expect(stub.calledOnce).to.be.true;
+        done();
+      });
+    });
+
+    it('should return messageId on success', function(done) {
+      var stub = sinon.stub(client, 'post', function(options, callback) {
+        callback(null, { body: { responses: [{ recipientSendId: 'fake-id' }] } });
+      });
+
       transport.send(payload, function(err, info) {
         expect(err).to.not.exist;
-        expect(postStub.calledTwice).to.be.true;
+        expect(stub.calledTwice).to.be.true;
         expect(info.messageId).to.equal('fake-id');
         done();
       });

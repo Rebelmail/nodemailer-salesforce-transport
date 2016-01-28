@@ -23,13 +23,13 @@
   },
   "homepage": "https://github.com/Rebelmail/nodemailer-salesforce-transport",
   "dependencies": {
-    "email-addresses": "^2.0.1",
-    "fuel-rest": "^2.0.0",
-    "neo-async": "^1.7.0"
+    "email-addresses": "^2.0.2",
+    "fuel-rest": "^2.0.2",
+    "neo-async": "^1.7.2"
   },
   "devDependencies": {
     "chai": "^3.4.1",
-    "mocha": "^2.3.4",
-    "sinon": "^1.17.2"
+    "mocha": "^2.4.4",
+    "sinon": "^1.17.3"
   }
 }
