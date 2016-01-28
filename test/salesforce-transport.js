@@ -63,6 +63,13 @@ describe('SalesforceTransport', function() {
 
     it('should return messageId on success', function(done) {
       var stub = sinon.stub(client, 'post', function(options, callback) {
+        expect(options.json.From.Name).to.equal('Gary the Snail');
+        expect(options.json.From.Address).to.equal('gary@bikini.bottom');
+        expect(options.json.To.Address).oneOf(['spongebob@bikini.bottom', 'patrick@bikini.bottom']);
+        expect(options.json.To.SubscriberKey).oneOf(['spongebob@bikini.bottom', 'patrick@bikini.bottom']);
+        expect(options.json.To.ContactAttributes.SubscriberAttributes.subject).to.equal(payload.data.subject);
+        expect(options.json.To.ContactAttributes.SubscriberAttributes.text).to.equal(payload.data.text);
+        expect(options.json.To.ContactAttributes.SubscriberAttributes.html).to.equal(payload.data.html);
         callback(null, { body: { responses: [{ recipientSendId: 'fake-id' }] } });
       });
 
