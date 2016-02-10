@@ -40,6 +40,20 @@ describe('SalesforceTransport', function() {
       client.post.restore();
     });
 
+    it('should return error when response is an unexpected payload', function(done) {
+      var stub = sinon.stub(client, 'post', function(options, callback) {
+        callback(null, {
+          body: {}
+        });
+      });
+
+      transport.send(payload, function(err, info) {
+        expect(err).to.exist;
+        expect(stub.calledOnce).to.be.true;
+        done();
+      });
+    });
+
     it('should return error when response hasErrors', function(done) {
       var stub = sinon.stub(client, 'post', function(options, callback) {
         callback(null, {
