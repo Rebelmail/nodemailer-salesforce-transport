@@ -15,7 +15,7 @@ var nodemailer = require('nodemailer');
 var salesforceTransport = require('nodemailer-salesforce-transport');
 
 var transport = nodemailer.createTransport(salesforceTransport({
-  externalKey: 'externalKey',
+  triggeredSendDefinitionKey: 'triggeredSendDefinitionKey',
   auth: {
     clientId: 'clientId',
     clientSecret: 'clientSecret'
