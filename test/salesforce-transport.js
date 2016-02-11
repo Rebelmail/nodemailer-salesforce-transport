@@ -9,7 +9,7 @@ var VERSION = require('../package.json').version;
 
 describe('SalesforceTransport', function() {
   var options = {
-    externalKey: 'externalKey',
+    triggeredSendDefinitionKey: 'triggeredSendDefinitionKey',
     auth: {
       clientId: 'clientId',
       clientSecret: 'clientSecret'
