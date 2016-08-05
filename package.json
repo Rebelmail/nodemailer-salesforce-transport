@@ -25,7 +25,7 @@
   "dependencies": {
     "addressparser": "^1.0.0",
     "fuel-rest": "^2.0.2",
-    "neo-async": "^1.7.2"
+    "neo-async": "^2.0.0"
   },
   "devDependencies": {
     "chai": "^3.4.1",
