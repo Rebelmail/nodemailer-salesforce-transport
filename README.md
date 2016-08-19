@@ -3,7 +3,8 @@
 A Salesforce Marketing Cloud (formerly ExactTarget) transport for Nodemailer.
 
 [![Build Status](https://travis-ci.org/Rebelmail/nodemailer-salesforce-transport.svg?branch=master)](https://travis-ci.org/Rebelmail/nodemailer-salesforce-transport)
-[![NPM version](https://badge.fury.io/js/nodemailer-salesforce-transport.png)](http://badge.fury.io/js/nodemailer-salesforce-transport)
+[![Coverage Status](https://coveralls.io/repos/github/Rebelmail/nodemailer-salesforce-transport/badge.svg?branch=master)](https://coveralls.io/github/Rebelmail/nodemailer-salesforce-transport?branch=master)
+[![npm version](https://badge.fury.io/js/nodemailer-salesforce-transport.svg)](https://badge.fury.io/js/nodemailer-salesforce-transport)
 
 ## Example
 
